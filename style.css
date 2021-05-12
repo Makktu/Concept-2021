@@ -1,0 +1,180 @@
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* .light-mode {
+    background-image: linear-gradient(
+        to right,
+        rgb(201, 201, 162),
+        rgb(181, 206, 132)
+    );
+    color: black;
+} */
+
+.aqua-mode {
+    background-color: teal;
+    color: yellow;
+}
+
+a {
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: yellowgreen;
+}
+
+input,
+textarea {
+    font-size: 1.5rem;
+    /* margin-top: 0 auto; */
+    border-radius: 5px;
+    background-color: rgb(185, 247, 247);
+}
+
+textarea {
+    font-family: system-ui;
+    font-size: 1.35rem;
+    margin-top: 10px;
+}
+
+label,
+select {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    background-color: rgb(185, 247, 247);
+    border-radius: 5px;
+}
+
+.form-1 {
+    width: 20vw;
+    justify-content: left;
+    display: inline;
+}
+
+#date-time {
+    font-size: 1.5rem;
+    /* background: rgb(30, 144, 210); */
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-item {
+    width: 400px;
+    margin: 10px;
+    margin-top: 10vh;
+}
+
+.flex-col-1 {
+    min-height: 200px;
+    width: 275px;
+}
+
+.flex-col-2 {
+    min-height: 200px;
+    width: 275px;
+}
+
+.flex-col-3 {
+    min-height: 200px;
+    width: 150px;
+    margin-top: 150px;
+    /* font-size: 2rem; */
+}
+
+.flex-col-4 {
+    min-height: 500px;
+    width: 90;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 5px dashed rgb(21, 136, 136);
+}
+
+.btn-save {
+    background-color: yellowgreen;
+}
+
+.btn-save:hover {
+    background-color: rgb(32, 226, 32);
+}
+
+.btn-print {
+    background-color: gray;
+    margin-bottom: 31px;
+}
+
+.btn-print:hover {
+    background-color: rgb(224, 208, 205);
+}
+
+.btn-clear {
+    background-color: rgb(240, 155, 140);
+}
+
+.btn-clear:hover {
+    background-color: rgb(155, 63, 75);
+}
+
+.btn {
+    width: 125px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+#job-number {
+    background-color: rgb(228, 216, 128);
+}
+
+.table-wrapper {
+    min-height: 100%;
+    margin-right: 10px;
+}
+
+th {
+    text-align: left;
+    font-style: system-ui;
+    font-size: 1.4rem;
+    background-color: gray;
+    color: white;
+    border: 1px solid blue;
+}
+
+tr {
+    font-style: system-ui;
+    font-size: 1.2rem;
+    border: 1px solid rgb(87, 87, 177);
+}
+
+#wide-details {
+    width: 400px;
+}
+
+#job-num {
+    width: 50px;
+}
+
+#con-tract,
+#ext {
+    width: 60px;
+}
+
+#hd-op,
+#staff {
+    width: 175px;
+}
+
+#from-loc,
+#to-loc,
+#time-date {
+    width: 150px;
+}
+
+table {
+    width: 100%;
+}

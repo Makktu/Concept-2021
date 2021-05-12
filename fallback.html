@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Helpdesk Fallback</title>
+    </head>
+    <body class="light-mode">
+        <a href="index.html">⬅BACK</a><br />
+        <button class="mode-flipper dark-mode">
+            Toggle Colour Scheme (Light/Dark)</button
+        ><br />
+        <button class="print-table">Print Table (in new window)</button>
+        <!-- TO BE ADDED <button class="aqua-mode">Aqua</button> -->
+
+        <br />
+        <div class="page-wrapper">
+            <br /><br />
+
+            <div class="flex-item flex-col-1">
+                <date id="date-time"></date><br /><br />
+                <!-- FORM STARTS HERE -->
+                <!-- <div class="form-1"> -->
+                <form id="form-one">
+                    <br /><input id="name" type="text" placeholder="NAME" />
+                    <br /><br />
+
+                    <br /><input id="email" type="text" placeholder="EMAIL" />
+                    <br /><br />
+
+                    <br />
+
+                    <input
+                        id="phone"
+                        type="text"
+                        placeholder="TELEPHONE"
+                    />
+
+                    <br /><br />
+
+                    <br /><input
+                        id="from-location"
+                        type="text"
+                        placeholder="FROM LOCATION"
+                    />
+                    <br /><br />
+
+                    <br /><input
+                        id="to-location"
+                        type="text"
+                        placeholder="TO LOCATION"
+                    />
+                </form>
+            </div>
+            <!-- end flex-item flex-col-1 -->
+
+            <div class="flex-item flex-col-2">
+                <br />
+                <br />
+                <br />
+            <!-- MAIN TEXTAREA -->
+                <textarea
+                    id="job-details"
+                    name="details"
+                    rows="12"
+                    cols="25"
+                    maxlength="1000"
+                    placeholder="--ENTER JOB DETAILS--"
+                ></textarea>
+            </div>
+            <div class="flex-item flex-col-3">
+                <!-- <label for="contract">CONTRACT:</label><br> -->
+
+                <select name="contract" id="contract">
+                    <option value="none">CONTRACT</option>
+                    <option value="PORT">PORTER</option>
+                    <option value="DOM">DOMESTIC</option>
+                    <option value="CAT">CATERING</option>
+                    <option value="SEC">SECURITY</option>
+                    <option value="TRANS">TRANS</option>
+                    <option value="WASTE">WASTE</option>
+                    <option value="VFC">VFC</option>
+                    <option value="VFR">VFR</option>
+                </select>
+                <br /><br />
+                <!-- <label for="operator">HELPDESK OPERATOR: </label><br> -->
+
+                <select class="hd-operator" name="operator" id="operator">
+                    <option value="none">HELPDESK OPERATOR</option>
+                    <option value="Brian Kavanagh">Brian Kavanagh</option>
+                    <option value="Deborah Hamilton">Deborah Hamilton</option>
+                    <option value="John McNamara">John McNamara</option>
+                    <option value="Jules Gluyas">Jules Gluyas</option>
+                    <option value="Mel Antcliffe">Mel Antcliffe</option>
+                    <option value="Rachael Jones">Rachael Jones</option>
+                    <option value="Sarah Glover">Sarah Glover</option>
+                    <option value="Stacie Littlewood">Stacie Littlewood</option>
+                    <option value="Vanessa Creed">Vanessa Creed</option></select
+                ><br />
+                Default Name
+                <input
+                    type="checkbox"
+                    id="myCheck"
+                    class="hd-operator-always"
+                    onclick=""
+                />
+
+                <button class="btn btn-save">✅ SAVE</button>
+
+                <button class="btn btn-clear">❌ CLEAR</button>
+                <button class="btn btn-print">🖨 PRINT</button>
+                <br />
+                JOB NUMBER:<br /><input id="job-number" type="text" /><br />
+            </div>
+            <!-- </form> -->
+            <!-- FORM ENDS HERE -->
+        </div>
+        <!-- end page-wrapper -->
+        <div class="flex-col-4">
+            <table id="printTable">
+                <tr>
+                    <th>Job#</th>
+                    <th>Contract</th>
+                    <th>Caller</th>
+                    <th>Ext.</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th id="wide-details">Details</th>
+                    <th>Operator</th>
+                    <th>Time</th>
+                </tr>
+                <tr id="templateRow">
+                    <td id="job-num"></td>
+                    <td id="con-tract"></td>
+                    <td id="staff"></td>
+                    <td id="ext"></td>
+                    <td id="from-loc"></td>
+                    <td id="to-loc"></td>
+                    <td id="the-deets"></td>
+                    <td id="hd-op"></td>
+                    <td id="time-date"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script src="script.js"></script>
+    <!-- <script src="script-2.js"></script> -->
+</html>

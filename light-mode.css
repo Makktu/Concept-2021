@@ -1,0 +1,50 @@
+/* body {
+    background: black;
+    color: white;
+} */
+
+a {
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: yellowgreen;
+}
+
+input,
+label,
+select {
+    font-size: 1.1rem;
+    margin-top: 0 auto;
+}
+
+.form-1 {
+    width: 20vw;
+    justify-content: left;
+    display: inline;
+}
+
+#date-time {
+    font-size: 1.2rem;
+    color: yellowgreen;
+
+    /* background: rgb(30, 144, 210); */
+}
+
+.page-wrapper {
+    display: flex;
+}
+
+.flex-item {
+    width: 350px;
+    margin: 10px;
+    margin-top: 10vh;
+}
+
+.flex-col-1 {
+    min-height: 200px;
+}
+
+.flex-col-2 {
+    min-height: 200px;
+}
