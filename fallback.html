@@ -6,72 +6,48 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Helpdesk Fallback</title>
-    </head>
-    <body class="light-mode">
-        <a href="index.html">⬅BACK</a><br />
-        <button class="mode-flipper dark-mode">
-            Toggle Colour Scheme (Light/Dark)</button
-        ><br />
-        <button class="print-table">Print Table (in new window)</button>
-        <!-- TO BE ADDED <button class="aqua-mode">Aqua</button> -->
+    </head>    
+    <!-- <h1>Helpdesk Fallback</h1>  -->
+    <div class="container">
+        <!-- PANEL 1: NEW TASK-->
+        <div
+            class="panel active new-task" 
+            
+        >
 
-        <br />
-        <div class="page-wrapper">
-            <br /><br />
+            <h3>New Task</h3>
+            <date id="date-time"></date><br>
+            <input id="name" type="text" placeholder="NAME" />
 
-            <div class="flex-item flex-col-1">
-                <date id="date-time"></date><br /><br />
-                <!-- FORM STARTS HERE -->
-                <!-- <div class="form-1"> -->
-                <form id="form-one">
-                    <br /><input id="name" type="text" placeholder="NAME" />
-                    <br /><br />
-
-                    <br /><input id="email" type="text" placeholder="EMAIL" />
-                    <br /><br />
-
+                    <br><input id="email" type="text" placeholder="EMAIL" />
                     <br />
 
-                    <input
-                        id="phone"
-                        type="text"
-                        placeholder="TELEPHONE"
-                    />
 
-                    <br /><br />
+                    <input id="phone" type="text" placeholder="TELEPHONE" />
+
+                   
 
                     <br /><input
                         id="from-location"
                         type="text"
                         placeholder="FROM LOCATION"
                     />
-                    <br /><br />
+                    
 
                     <br /><input
                         id="to-location"
                         type="text"
                         placeholder="TO LOCATION"
                     />
-                </form>
-            </div>
-            <!-- end flex-item flex-col-1 -->
-
-            <div class="flex-item flex-col-2">
-                <br />
-                <br />
-                <br />
-            <!-- MAIN TEXTAREA -->
-                <textarea
+                   <br><textarea
                     id="job-details"
                     name="details"
-                    rows="12"
-                    cols="25"
+                    rows="4"
+                    cols="16"
                     maxlength="1000"
                     placeholder="--ENTER JOB DETAILS--"
                 ></textarea>
-            </div>
-            <div class="flex-item flex-col-3">
-                <!-- <label for="contract">CONTRACT:</label><br> -->
+                <br>
 
                 <select name="contract" id="contract">
                     <option value="none">CONTRACT</option>
@@ -84,9 +60,7 @@
                     <option value="VFC">VFC</option>
                     <option value="VFR">VFR</option>
                 </select>
-                <br /><br />
-                <!-- <label for="operator">HELPDESK OPERATOR: </label><br> -->
-
+                <br />
                 <select class="hd-operator" name="operator" id="operator">
                     <option value="none">HELPDESK OPERATOR</option>
                     <option value="Brian Kavanagh">Brian Kavanagh</option>
@@ -98,28 +72,24 @@
                     <option value="Sarah Glover">Sarah Glover</option>
                     <option value="Stacie Littlewood">Stacie Littlewood</option>
                     <option value="Vanessa Creed">Vanessa Creed</option></select
-                ><br />
-                Default Name
-                <input
-                    type="checkbox"
-                    id="myCheck"
-                    class="hd-operator-always"
-                    onclick=""
-                />
+                ><br /><br />
 
-                <button class="btn btn-save">✅ SAVE</button>
+                <button type="button" class="btn btn-save">✅ SAVE</button>
 
                 <button class="btn btn-clear">❌ CLEAR</button>
                 <button class="btn btn-print">🖨 PRINT</button>
                 <br />
-                JOB NUMBER:<br /><input id="job-number" type="text" /><br />
-            </div>
-            <!-- </form> -->
-            <!-- FORM ENDS HERE -->
+               <p id="job-number">Job Number</p>
+                 
         </div>
-        <!-- end page-wrapper -->
-        <div class="flex-col-4">
-            <table id="printTable">
+        <!-- END PANEL 1 -->
+        <!-- PANEL 2: ALL JOBS -->
+        <div
+            class="panel all-tasks" 
+        >
+        
+            <h3>All Contracts</h3>
+            <table class="printTable collapsed all-jobs">
                 <tr>
                     <th>Job#</th>
                     <th>Contract</th>
@@ -149,6 +119,79 @@
                 </tr>
             </table>
         </div>
+        <!-- END PANEL 2 -->
+        <!-- PANEL 3: PORTER JOBS -->
+        <div
+            class="panel porters" 
+        >
+            <h3>Portering</h3>
+            <div class="inactive">
+                <!-- ON when INACTIVE
+                OFF when ACTIVE -->
+            </div>
+            <div class = "port-table no-show">
+            <table class="portering">
+                <tr>
+                    <th>Job#</th>
+                    <th>Contract</th>
+                    <th>Caller</th>
+                    <th>Ext.</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th id="wide-details">Details</th>
+                    <th>Operator</th>
+                    <th>Time</th>
+                </tr>
+                <tr id="templateRow">
+                    <td id="job-num"></td>
+                    <td id="con-tract"></td>
+                    <td id="staff"></td>
+                    <td id="ext"></td>
+                    <td id="from-loc"></td>
+                    <td id="to-loc"></td>
+                    <td id="the-deets"></td>
+                    <td id="hd-op"></td>
+                    <td id="time-date"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <!-- END PANEL 3 -->
+        <!-- PANEL 4: DOMESTIC JOBS -->
+        <div
+            class="panel domestic"
+            style="
+                background-image: url('https://www.nasa.gov/images/content/559409main_pia14104-43_946-710.jpg');
+            "
+        >
+            <h3>Domestic</h3>
+        </div>
+        <!-- END PANEL 4 -->
+        <!-- PANEL 5: CATERING JOBS -->
+        <div
+            class="panel catering"
+            style="
+                background-image: url('https://c4.wallpaperflare.com/wallpaper/482/622/342/apocalypse-earth-cracks-sci-fi-space-wallpaper-preview.jpg');
+            "
+        >
+            <h3>Catering</h3>
+        </div>
+        <!-- END PANEL 5 -->
+        <!-- PANEL 6: VINCI JOBS -->
+        <div
+            class="panel vinci"
+            style="
+                background-image: url('https://c4.wallpaperflare.com/wallpaper/482/622/342/apocalypse-earth-cracks-sci-fi-space-wallpaper-preview.jpg');
+            "
+        >
+            <h3>Vinci</h3>
+        </div>
+    </div>
     </body>
     <script src="script.js"></script>
     <!-- <script src="script-2.js"></script> -->

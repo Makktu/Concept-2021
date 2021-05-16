@@ -1,180 +1,170 @@
-.dark-mode {
-    background-color: black;
-    color: white;
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+    box-sizing: border-box;
 }
 
-/* .light-mode {
-    background-image: linear-gradient(
-        to right,
-        rgb(201, 201, 162),
-        rgb(181, 206, 132)
-    );
-    color: black;
-} */
-
-.aqua-mode {
-    background-color: teal;
-    color: yellow;
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(43, 41, 41);
+    color: #fff;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    /* my dark styling */
+    /* background-color: rgb(19, 17, 17);
+    color: rgb(236, 222, 222); */
 }
 
-a {
+h1 {
+    margin: 5px 0px;
     font-size: 1.5rem;
 }
 
-a:hover {
-    color: yellowgreen;
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.5s ease-in;
+    border: 1px solid rgb(230, 236, 230);
+    /* display: none; */
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 2px;
+    right: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.panel table {
+    /* font-size: 24px; */
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    /* bottom: 2px;
+    right: 20px; */
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active table {
+    opacity: 1;
+    transition: opacity 1.4s ease-in 0.4s;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.2s ease-in 0.4s;
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
 }
 
 input,
-textarea {
-    font-size: 1.5rem;
-    /* margin-top: 0 auto; */
-    border-radius: 5px;
-    background-color: rgb(185, 247, 247);
-}
-
-textarea {
-    font-family: system-ui;
-    font-size: 1.35rem;
-    margin-top: 10px;
-}
-
-label,
+textarea,
 select {
     font-size: 1.1rem;
-    margin-top: 10px;
-    background-color: rgb(185, 247, 247);
+    font-family: inherit;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(199, 213, 218);
+    width: 95%;
     border-radius: 5px;
 }
 
-.form-1 {
-    width: 20vw;
-    justify-content: left;
-    display: inline;
+select {
+    background-color: rgb(147, 211, 145);
 }
 
 #date-time {
-    font-size: 1.5rem;
-    /* background: rgb(30, 144, 210); */
-}
-
-.page-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.flex-item {
-    width: 400px;
-    margin: 10px;
-    margin-top: 10vh;
-}
-
-.flex-col-1 {
-    min-height: 200px;
-    width: 275px;
-}
-
-.flex-col-2 {
-    min-height: 200px;
-    width: 275px;
-}
-
-.flex-col-3 {
-    min-height: 200px;
-    width: 150px;
-    margin-top: 150px;
-    /* font-size: 2rem; */
-}
-
-.flex-col-4 {
-    min-height: 500px;
-    width: 90;
-    margin-top: 10px;
-    margin-left: 10px;
-    border: 5px dashed rgb(21, 136, 136);
-}
-
-.btn-save {
-    background-color: yellowgreen;
-}
-
-.btn-save:hover {
-    background-color: rgb(32, 226, 32);
-}
-
-.btn-print {
-    background-color: gray;
-    margin-bottom: 31px;
-}
-
-.btn-print:hover {
-    background-color: rgb(224, 208, 205);
-}
-
-.btn-clear {
-    background-color: rgb(240, 155, 140);
-}
-
-.btn-clear:hover {
-    background-color: rgb(155, 63, 75);
-}
-
-.btn {
-    width: 125px;
-    border-radius: 10px;
-    border: none;
+    margin: 2px;
     font-size: 1.3rem;
-    margin-top: 15px;
 }
 
 #job-number {
-    background-color: rgb(228, 216, 128);
-}
-
-.table-wrapper {
-    min-height: 100%;
-    margin-right: 10px;
+    color: rgb(179, 241, 8);
+    font-size: 1.2rem;
+    text-decoration: underline;
 }
 
 th {
-    text-align: left;
-    font-style: system-ui;
-    font-size: 1.4rem;
-    background-color: gray;
-    color: white;
-    border: 1px solid blue;
+    text-decoration: underline;
 }
 
-tr {
-    font-style: system-ui;
-    font-size: 1.2rem;
-    border: 1px solid rgb(87, 87, 177);
-}
-
-#wide-details {
-    width: 400px;
-}
-
-#job-num {
-    width: 50px;
-}
-
-#con-tract,
-#ext {
-    width: 60px;
-}
-
-#hd-op,
-#staff {
-    width: 175px;
-}
-
-#from-loc,
-#to-loc,
-#time-date {
-    width: 150px;
+button {
+    font-size: 1.1rem;
+    margin-left: 15px;
 }
 
 table {
     width: 100%;
+}
+
+.portering {
+    display: none;
+}
+
+.all-jobs {
+    display: none;
+}
+
+/* .all-jobs {
+    background-color: rgb(231, 240, 237);
+}
+
+.all-jobs.active {
+    display: contents;
+}
+
+.inactive {
+    display: none;
+} */
+
+/* .inactive-porter {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(117, 117, 194);
+} */
+
+#job-num {
+    width: 1%;
+}
+#the-deets {
+    width: 40%;
+}
+
+#staff {
+    /* margin-left: 20px; */
+}
+
+#hd-op {
+    width: 10%;
 }

@@ -1,5 +1,91 @@
 "use strict";
 
+// TODO Next touch!
+// TODO 1) Make the print buttons work (form and table)
+// TODO 2) Spruce up the styling – less 1999, at least 2009.
+// TODO
+// TODO
+// TODO
+
+let lastClicked;
+function allToggle() {
+    if (allTasksToggle.style.display === "none") {
+        allTasksToggle.style.display = "block";
+        lastClicked = "allTasksOn";
+    } else {
+        allTasksToggle.style.display = "none";
+        lastClicked = "allTasksOff";
+    }
+}
+function porToggle() {
+    if (porteringToggle.style.display === "none") {
+        porteringToggle.style.display = "block";
+        lastClicked = "porteringOn";
+    } else {
+        porteringToggle.style.display = "none";
+        lastClicked = "porteringOff";
+    }
+}
+function domToggle() {
+    if (porteringToggle.style.display === "none") {
+        porteringToggle.style.display = "block";
+        lastClicked = "porteringOn";
+    } else {
+        porteringToggle.style.display = "none";
+        lastClicked = "porteringOff";
+    }
+}
+function catToggle() {
+    if (porteringToggle.style.display === "none") {
+        porteringToggle.style.display = "block";
+        lastClicked = "porteringOn";
+    } else {
+        porteringToggle.style.display = "none";
+        lastClicked = "porteringOff";
+    }
+}
+function vinToggle() {
+    if (porteringToggle.style.display === "none") {
+        porteringToggle.style.display = "block";
+        lastClicked = "porteringOn";
+    } else {
+        porteringToggle.style.display = "none";
+        lastClicked = "porteringOff";
+    }
+}
+
+// * assign all the panels to a single const variable
+const panels = document.querySelectorAll(".panel");
+const allTasks = document.getElementById("all-jobs");
+const porteringToggle = document.querySelector(".portering");
+const allTasksToggle = document.querySelector(".all-jobs");
+
+// * loop through the panels, adding an event listener to all
+// * and reacting to clicks
+panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+        removeActiveClasses();
+        panel.classList.toggle("active");
+        if (panel.classList.contains("new-task"))
+            console.log("new-task clicked");
+        if (panel.classList.contains("all-tasks")) allToggle();
+        if (panel.classList.contains("domestic"))
+            console.log("domestic clicked");
+        if (panel.classList.contains("porters")) porToggle();
+        if (panel.classList.contains("vinci")) console.log("vinci clicked");
+        if (panel.classList.contains("catering"))
+            console.log("catering clicked");
+    });
+});
+
+const removeActiveClasses = () => {
+    panels.forEach((panel) => {
+        panel.classList.remove("active");
+    });
+    if ((lastClicked = "porteringOn")) porteringToggle.style.display = "none";
+    if ((lastClicked = "allTasksOn")) allTasksToggle.style.display = "none";
+};
+
 let clearClick = false;
 
 // * CREATE AND MAINTAIN JOBNUMBER
@@ -9,17 +95,28 @@ let clearClick = false;
 // FOR THE FUTURE ^^^
 // *******************************************************************
 function maintainJobNum() {
-    document.getElementById("job-number").value = startJobNum;
+    document.getElementById("job-number").innerHTML =
+        "Job Number: " + startJobNum;
 }
 
 let startJobNum = 1001;
+// let startJobNum = Number(prompt("What's the starting job number?"));
 maintainJobNum();
 
 let allJobs = [];
 
-// *********************************************
-// * SHOW DATE & TIME AT TOP OF NEW BLANK FORM *
-// *********************************************
+//*************************************
+//* SHOW DATE-TIME AT TOP OF NEW FORM *
+//*************************************
+function tableTime() {
+    const dateTimeDisplay = document.querySelector("#date-time");
+    let dateX = new Date();
+    let dateString = (dateX += "");
+    let dateTime = dateString.substring(0, dateString.indexOf("G"));
+    dateTimeDisplay.innerText = dateTime; // cuts off the returned date-time string at the start of its GMT guff
+    return tableTime;
+}
+
 function timeShow() {
     const dateTimeDisplay = document.querySelector("#date-time");
     let dateX = new Date();
@@ -38,7 +135,7 @@ timeShow();
 // * LIGHT/DARK MODE FLIPPER *
 // ***************************
 
-const changeColourScheme = () => {
+/* const changeColourScheme = () => {
     if (!isDark) {
         document.querySelector(".light-mode").classList.add("dark-mode");
         isDark = true;
@@ -52,28 +149,7 @@ const darkFlip = document.querySelector(".mode-flipper");
 
 let isDark = false;
 
-darkFlip.addEventListener("click", changeColourScheme);
-
-// *************************
-// * HD OPERATOR ALWAYS ON *
-// *************************
-
-function fixHelpDesk() {
-    if (!hdOn) {
-        document.querySelector(".hd-operator").disabled = true;
-        // document.write(".hd-operator").value;
-        hdOn = true;
-    } else {
-        document.querySelector(".hd-operator").disabled = false;
-        hdOn = false;
-    }
-}
-
-const hdCheck = document.querySelector(".hd-operator-always");
-
-let hdOn = false;
-
-hdCheck.addEventListener("click", fixHelpDesk);
+darkFlip.addEventListener("click", changeColourScheme); */
 
 // * PRINT
 // ! (bugged as-is)
@@ -97,7 +173,8 @@ function clearForm() {
     timeShow();
     if (!clearClick) {
         startJobNum++;
-        document.getElementById("job-number").value = startJobNum;
+        // document.getElementById("job-number").innerHTML = startJobNum;
+        maintainJobNum();
     }
 
     // document.getElementById("operator").value = "";
@@ -120,7 +197,7 @@ function getTemplateRow() {
     return x;
 }
 function addRow() {
-    let t = document.getElementById("printTable");
+    let t = document.querySelector(".printTable");
     let rows = t.getElementsByTagName("tr");
     let r = rows[rows.length - 1];
     r.parentNode.insertBefore(getTemplateRow(), r);
