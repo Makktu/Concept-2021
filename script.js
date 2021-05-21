@@ -213,7 +213,7 @@ const saveClicked = () => {
     let details = document.getElementById("job-details").value;
     let contract = document.getElementById("contract").value;
     let operator = document.getElementById("operator").value;
-    let jobNumber = document.getElementById("job-number").value;
+    let jobNumber = document.getElementById("job-number").textContent;
     // let timeDate = document.getElementById("job-number").value;
 
     addRow();
